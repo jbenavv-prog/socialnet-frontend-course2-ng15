@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { SocialLayoutComponent } from './layouts/social-layout/social-layout.component';
+import { NavbarComponent } from './layouts/components/navbar/navbar.component';
+import { FooterComponent } from './layouts/components/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthLayoutComponent,
-    SocialLayoutComponent
+    SocialLayoutComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,32 @@
-<p>signup works!</p>
+<h3>Registrarse</h3>
+<form class="col" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="row">
+        <mat-form-field hintLabel="Max 100 characters" appearance="fill">
+            <mat-label>Ingresa su nombre</mat-label>
+            <input name="fullName" ngModel matInput #input maxlength="100" placeholder="Ex. Nougat">
+            <mat-hint align="end">{{input.value.length}}/100</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <div class="example-container">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Enter your email</mat-label>
+                <input name="email" ngModel matInput placeholder="pat@example.com" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input name="password" ngModel matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <button mat-raised-button>Registrarse</button>
+    </div>
+</form>

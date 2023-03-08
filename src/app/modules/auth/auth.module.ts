@@ -20,7 +20,7 @@ import { MatInputModule } from '@angular/material/input';
     ReactiveFormsModule,
     MatIconModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
   ],
 })
 export class AuthModule {}

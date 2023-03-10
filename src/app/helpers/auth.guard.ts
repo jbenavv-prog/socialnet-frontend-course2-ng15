@@ -23,7 +23,7 @@ export class AuthGuard implements CanActivate {
     | boolean
     | UrlTree {
     //from: login
-    //to:   /
+    //to:   /profile /home /settigns /products
 
     if (!this.tokenService.isAuthenticated()) {
       this.router.navigate(['/login']);

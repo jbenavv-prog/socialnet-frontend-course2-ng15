@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import jwtDecode from 'jwt-decode';
 import { GlobalConstants } from '../common/global-constants';
 import { TokenService } from './token.service';
 
@@ -27,5 +28,9 @@ export class AuthService {
     this.tokenService.deleteToken();
 
     this.router.navigate(['login']);
+  }
+
+  getUser(){
+    return jwtDecode(this.tokenService.getToken())
   }
 }

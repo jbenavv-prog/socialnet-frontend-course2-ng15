@@ -20,7 +20,8 @@
     </div>
     <b>{{user.fullName}}</b>
     <div class="avatar rounded-circle mx-2" [matMenuTriggerFor]="menu">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOH2aZnIHWjMQj2lQUOWIL2f4Hljgab0ecZQ&usqp=CAU"
+      <img
+        [src]="profile?.photoProfile || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOH2aZnIHWjMQj2lQUOWIL2f4Hljgab0ecZQ&usqp=CAU'"
         alt="">
     </div>
     <mat-menu #menu="matMenu">
